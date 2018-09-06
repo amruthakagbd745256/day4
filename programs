@@ -1,0 +1,143 @@
+1.Write a program to print sum of n numbers
+#include<stdio.h>
+void main()
+{
+    int i,m, n,sum=0;
+    
+    printf("\n enter the starting numbers:");
+    scanf("%d",&m);
+    printf("\n enter the last number:");
+    scanf("%d",&n);
+    
+    while(m<=n)
+    {
+            sum=sum+m;
+            m++;
+    }
+ 
+    printf("sum of numbers:%d",sum);
+    
+    
+}
+ 
+2. Write function to get n numbers from the user.
+ 
+#include <stdio.h>
+void printNaturalNumbers(int lowerLimit, int upperLimit);
+int main()
+{
+    int lowerLimit, upperLimit;    
+    printf("Enter lower limit: ");
+    scanf("%d", &lowerLimit);
+    printf("Enter upper limit: ");
+    scanf("%d", &upperLimit);
+ 
+    printf("All natural numbers from %d to %d are: ", lowerLimit, upperLimit);
+    printNaturalNumbers(lowerLimit, upperLimit);
+    
+    return 0;
+}
+ 
+void printNaturalNumbers(int lowerLimit, int upperLimit)
+{
+    if(lowerLimit > upperLimit)
+        return;
+    
+    printf("%d, ", lowerLimit);
+    printNaturalNumbers(lowerLimit + 1, upperLimit);
+}
+ 
+3.Write function to compute the sum of n numbers
+#include<stdio.h>
+int sum(int a,int b);
+void main()
+{
+	int a,b,z;
+	printf("\n enter the first and last number:");
+    scanf("%d%d",&a,&b);
+	
+	z=sum(a,b);
+    printf("\nsum=%d",z);
+	
+}
+ 
+int sum(int a,int b)
+{
+	int sum=0;
+	while(a<=b)
+	{
+    	sum=sum+a;
+    	a++;
+	}
+	return sum;
+}
+ 
+5. Smallest of n numbers.
+#include<stdio.h>
+void main()
+{
+	int n,a[10],i,smallest;
+	printf("\n enter the number:\n");
+    scanf("%d",&n);
+	
+	printf("\n enter the numbers:");
+    for(i=0;i<n;i++)
+	{
+        scanf("%d",&a[i]);
+	}
+	
+	
+    for(i=0;i<=n;i++)
+	{
+    	if(a[i]<n)
+    	{
+            smallest=a[i];
+    	}
+	}
+	printf("\n the smallest is:%d",smallest);
+}
+
+6. Smallest and second smallest of n numbers.
+#include<stdio.h>
+void main()
+{
+    int n,smallest,secsmallest,i,a[10];
+    printf("\n enter the size of numbers:");
+    scanf("%d",&n);
+    
+    printf("\n enter the numbers:");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    
+    for(i=0;i<n;i++)
+    {
+        if(a[0]<a[1])
+        {
+            smallest=a[0];
+            secsmallest=a[1];
+        }
+        else
+        {
+            smallest=a[1];
+            secsmallest=a[0];
+        }
+    }
+    
+    for(i=2;i<n;i++)
+    {
+        if(a[i]<smallest)
+        {
+            secsmallest=smallest;
+            smallest=a[i];
+        }
+        else if(a[i]<secsmallest)
+        {
+            secsmallest=a[i];
+        }
+    }
+    printf("\n smallest of number is:%d",smallest);
+    printf("\n secsmallest of number is:%d",secsmallest);
+}
+
